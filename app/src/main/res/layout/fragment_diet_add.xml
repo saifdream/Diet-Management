@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.saif_dream.dietpart.fragment.DietAddFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diet Type"
+            android:textSize="@dimen/titleSize"
+            android:layout_weight="1"/>
+        <Spinner
+            android:id="@+id/dietTypeSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:entries="@array/dietTypeArray">
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Menu"
+            android:textSize="@dimen/titleSize"/>
+        <EditText
+            android:id="@+id/dietMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".62"
+            android:inputType="text"
+            android:hint="Give Diet Menu"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Date"
+            android:textSize="@dimen/titleSize"/>
+        <EditText
+            android:id="@+id/dietDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".60"
+            android:hint="Pick Diet Date"
+            android:focusable="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Time"
+            android:textSize="@dimen/titleSize"/>
+        <EditText
+            android:id="@+id/dietTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".60"
+            android:hint="Pick Diet Time"
+            android:focusable="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:id="@+id/dailyAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Alarm"
+            android:layout_marginLeft="80dp"/>
+
+        <CheckBox
+            android:id="@+id/reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminder"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/addDiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addButtonText"
+            android:backgroundTint="#0aaae9"
+            android:layout_weight="1"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelButtonText"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

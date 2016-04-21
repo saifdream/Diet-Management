@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.saif_dream.dietpart.fragment.DietChatFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/toDayChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Chart"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="22sp"/>
+        <ListView
+            android:id="@+id/toDayChartListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/upComingChart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UpComing Chart"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffff"
+            android:textSize="22sp"/>
+        <ListView
+            android:id="@+id/upComingChartListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+
+
+</LinearLayout>

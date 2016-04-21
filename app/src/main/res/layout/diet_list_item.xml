@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/dietIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:src="@mipmap/ic_diet"/>
+
+    <TextView
+        android:id="@+id/dietDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Date"
+        android:textColor="#ecf7f4"
+        android:paddingRight="15dp"
+        android:paddingBottom="25dp"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/dietIcon">
+    </TextView>
+
+    <TextView
+        android:id="@+id/dietType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dietIcon"
+        android:layout_alignBottom="@+id/dietDate"
+        android:paddingRight="15dp"
+        android:text="Diet Type"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        android:textColor="#b2dcd0"/>
+
+    <TextView
+        android:id="@+id/dietTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/dietDate"
+        android:text="Diet Time"
+        android:textSize="18sp"
+        android:textColor="#ecf7f4"/>
+
+</RelativeLayout>

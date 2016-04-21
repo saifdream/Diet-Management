@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/dietType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="BreakFast"
+        android:textColor="#0b8160"
+        android:textSize="22sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/dietMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Menu:"
+        android:textSize="20sp"
+        android:layout_below="@id/dietType"
+        android:paddingRight="10dp"
+        android:textColor="#269bc6"/>
+    <TextView
+        android:id="@+id/dietMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Menu"
+        android:layout_below="@id/dietType"
+        android:layout_toRightOf="@id/dietMenu"
+        android:textSize="20sp"
+        android:textColor="#00bf79"/>
+
+    <TextView
+        android:id="@+id/dietTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Time:"
+        android:layout_below="@id/dietMenu"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
+        android:textColor="#269bc6"/>
+    <TextView
+        android:id="@+id/dietTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Time"
+        android:layout_below="@id/dietMenuText"
+        android:layout_toRightOf="@id/dietTime"
+        android:paddingRight="20dp"
+        android:textSize="20sp"
+        android:textColor="#00bf79"/>
+
+    <TextView
+        android:id="@+id/dietDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Date:"
+        android:layout_below="@id/dietTime"
+        android:paddingRight="10dp"
+        android:textColor="#269bc6"
+        android:textSize="20sp">
+    </TextView>
+    <TextView
+        android:id="@+id/dietDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diet Date"
+        android:layout_below="@id/dietTimeText"
+        android:layout_toRightOf="@id/dietDate"
+        android:textColor="#00bf79"
+        android:textSize="20sp">
+    </TextView>
+
+</RelativeLayout>
