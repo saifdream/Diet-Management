@@ -13,4 +13,5 @@
 
     <string name="addButtonText">Add</string>
     <string name="cancelButtonText">Cancel</string>
+    <string name="updateButtonText">Update</string>
 </resources>

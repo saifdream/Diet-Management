@@ -35,38 +35,44 @@ import java.util.Locale;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DietAddFragment extends Fragment implements View.OnClickListener {
+public class DietUpdateFragment extends Fragment implements View.OnClickListener {
+
+
     Fragment fragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
     Diet diet;
     DietManager dietManager;
+    ArrayList<Diet> upComingArrayList;
+    int currentPosition;
 
     DatePickerDialog eventDatePickerDialog;
     TimePickerDialog timePickerDialog;
     SimpleDateFormat dateFormatter;
 
     Spinner dietTypeSP;
+    String[] dietType_array;
+
     TextView dietMenuET, dietDateET, dietTimeET;
     CheckBox dailyAlarmChk, reminderChk;
-    Button addDiet, cancel;
+    Button updateDiet, cancel;
     FloatingActionButton floatingActionButton;
 
     String dietTypeStr,dietMenuStr, dietDateStr, dietTimeStr,dailyAlarmStr, reminderStr;
 
-    public DietAddFragment() {}
+    public DietUpdateFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_diet_add, container, false);
+        View view = inflater.inflate(R.layout.fragment_diet_update, container, false);
 
-       // diet = new Diet();
+        // diet = new Diet();
         dietManager = new DietManager(getActivity());
 
         dateFormatter = new SimpleDateFormat("MM-dd-yyyy", Locale.US);
 
-        String[] dietType_array = getResources().getStringArray(R.array.dietTypeArray);
+        dietType_array = getResources().getStringArray(R.array.dietTypeArray);
         final List<String> dietTypeList = new ArrayList<>(Arrays.asList(dietType_array));
 
         dietTypeSP = (Spinner) view.findViewById(R.id.dietTypeSP);
@@ -89,8 +95,8 @@ public class DietAddFragment extends Fragment implements View.OnClickListener {
         dailyAlarmChk = (CheckBox) view.findViewById(R.id.dailyAlarm);
         reminderChk = (CheckBox) view.findViewById(R.id.reminder);
 
-        addDiet = (Button) view.findViewById(R.id.updateDiet);
-        addDiet.setOnClickListener(this);
+        updateDiet = (Button) view.findViewById(R.id.updateDiet);
+        updateDiet.setOnClickListener(this);
         cancel = (Button) view.findViewById(R.id.cancel);
         cancel.setOnClickListener(this);
 
@@ -103,9 +109,35 @@ public class DietAddFragment extends Fragment implements View.OnClickListener {
                 fragmentTransaction.replace(R.id.dietFragmentView, new DietChatFragment()).commit();
             }
         });
-
+        setDiet();
 
         return view;
+    }
+
+    public void setDiet() {
+        Bundle args = getArguments();
+        if (args != null) {
+            upComingArrayList = (ArrayList<Diet>) args.getSerializable("key");
+            currentPosition = args.getInt("pos");
+
+            dietTypeSP.setSelection(Arrays.asList(dietType_array).indexOf(upComingArrayList.get(currentPosition).getDietType()));
+
+            dietMenuET.setText(upComingArrayList.get(currentPosition).getDietMenu());
+            dietDateET.setText(upComingArrayList.get(currentPosition).getDietDate());
+            dietTimeET.setText(upComingArrayList.get(currentPosition).getDietTime());
+
+            if (upComingArrayList.get(currentPosition).getDailyAlarm().equals("Yes")){
+                dailyAlarmChk.setChecked(true);
+            } else {
+                dailyAlarmChk.setChecked(false);
+            }
+
+            if (upComingArrayList.get(currentPosition).getReminder().equals("Yes")){
+                reminderChk.setChecked(true);
+            } else {
+                reminderChk.setChecked(false);
+            }
+        }
     }
 
     @Override
@@ -121,7 +153,6 @@ public class DietAddFragment extends Fragment implements View.OnClickListener {
                                 dietDateET.setText(dateFormatter.format(newDate.getTime()));
                             }
                         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-                eventDatePickerDialog.getDatePicker().setMinDate(newCalendar.getTimeInMillis());
                 eventDatePickerDialog.show();
             }
             break;
@@ -164,10 +195,9 @@ public class DietAddFragment extends Fragment implements View.OnClickListener {
                 }
 
                 diet = new Diet(dietTypeStr,dietMenuStr,dietDateStr,dietTimeStr,dailyAlarmStr,reminderStr);
-                boolean isInserted = dietManager.addDietInfo(diet);
-                if (isInserted) {
-                    Toast.makeText(getActivity(), "Save Successfully", Toast.LENGTH_LONG).show();
-                    clear();
+                boolean isUpdated = dietManager.updateDietInfo(currentPosition,diet);
+                if (isUpdated) {
+                    Toast.makeText(getActivity(), "Update Successfully", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getActivity(), "Oops! Failed, Try Again.", Toast.LENGTH_LONG).show();
                 }
@@ -177,21 +207,11 @@ public class DietAddFragment extends Fragment implements View.OnClickListener {
             case R.id.cancel :{
                 fragmentManager = getFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.addToBackStack("Add Chart");
+                fragmentTransaction.addToBackStack("Update Chart");
                 fragmentTransaction.replace(R.id.dietFragmentView, new DietChatFragment(),"Diet Chart").commit();
             }
             break;
         }
     }
-    public void clear(){
-        dietMenuStr = "";
-        dietDateStr = "";
-        dietTimeStr = "";
-        dietTypeSP.setSelection(0);
-        dietMenuET.setText(dietMenuStr);
-        dietDateET.setText(dietDateStr);
-        dietTimeET.setText(dietTimeStr);
-        dailyAlarmChk.setChecked(false);
-        reminderChk.setChecked(false);
-    }
+
 }

@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager = getFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.dietFragmentView, new DietAddFragment());
-        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.addToBackStack("Add Diet");
+        fragmentTransaction.add(R.id.dietFragmentView, new DietChatFragment(),"Diet Chart");
         fragmentTransaction.commit();
     }
 }

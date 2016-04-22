@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.saif_dream.dietpart.controller.DietManager;
 import com.example.saif_dream.dietpart.model.Diet;
 import com.example.saif_dream.dietpart.R;
 import com.example.saif_dream.dietpart.adapter.DietListAdapter;
@@ -30,6 +31,8 @@ public class DietListFragment extends Fragment {
     ListView listView;
     FloatingActionButton floatingActionButton;
 
+    DietManager dietManager;
+
     DietListAdapter dietListAdapter;
     ArrayList<Diet> dietArrayList;
 
@@ -40,7 +43,9 @@ public class DietListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_diet_list, container, false);
         listView = (ListView) view.findViewById(R.id.dietListView);
         dietArrayList = new ArrayList<>();
-        dietArrayList = Diet.getMockDiet();
+        //dietArrayList = Diet.getMockDiet();
+        dietManager = new DietManager(getActivity());
+        dietArrayList = dietManager.getAllDietInfo();
 
         dietListAdapter = new DietListAdapter(getActivity(),dietArrayList);
         listView.setAdapter(dietListAdapter);

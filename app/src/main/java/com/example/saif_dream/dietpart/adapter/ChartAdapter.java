@@ -21,7 +21,7 @@ public class ChartAdapter extends ArrayAdapter<Diet> {
     TextView dietType, dietDate, dietTime, dietMenu;
 
     public ChartAdapter(Context context, ArrayList<Diet> dietArrayList) {
-        super(context, R.layout.diet_chart_upcoming_item, dietArrayList);
+        super(context, R.layout.diet_chart_item, dietArrayList);
         this.context = context;
         this.dietArrayList = dietArrayList;
     }
@@ -29,7 +29,7 @@ public class ChartAdapter extends ArrayAdapter<Diet> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.diet_chart_upcoming_item, null);
+        convertView = inflater.inflate(R.layout.diet_chart_item, null);
 
         dietType = (TextView) convertView.findViewById(R.id.dietType);
         dietDate = (TextView) convertView.findViewById(R.id.dietMenuText);

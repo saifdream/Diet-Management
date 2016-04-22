@@ -10,15 +10,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="10dp"
-        android:layout_weight="1">
-        <TextView
-            android:id="@+id/toDayChart"
-            android:layout_width="wrap_content"
+        android:layout_weight="6">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Today's Chart"
-            android:layout_marginBottom="10dp"
-            android:textColor="#ffffff"
-            android:textSize="22sp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/toDayChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Chart"
+                android:layout_marginBottom="10dp"
+                android:textColor="#454f53"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/emptyMassageTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="There is no item found!"
+                android:textSize="@dimen/titleSize"
+                android:textColor="#de3737"
+                android:layout_below="@id/toDayChart"
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/addNewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_input_add"
+                android:padding="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/dietListBtn"
+                android:layout_toStartOf="@+id/dietListBtn" />
+
+            <ImageButton
+                android:id="@+id/dietListBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_dialog_dialer"
+                android:padding="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
         <ListView
             android:id="@+id/toDayChartListView"
             android:layout_width="match_parent"
@@ -30,18 +69,38 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1">
-        <TextView
-            android:id="@+id/upComingChart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UpComing Chart"
-            android:layout_marginBottom="10dp"
-            android:textColor="#ffffff"
-            android:textSize="22sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/upComingChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UpComing Chart"
+                android:paddingBottom="10dp"
+                android:textColor="#454f53"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/emptyMassageUP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="There is no item found!"
+                android:textSize="@dimen/titleSize"
+                android:textColor="#de3737"
+                android:layout_below="@id/upComingChart"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
         <ListView
             android:id="@+id/upComingChartListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
+            android:layout_height="wrap_content">
+        </ListView>
+
     </LinearLayout>
 
 

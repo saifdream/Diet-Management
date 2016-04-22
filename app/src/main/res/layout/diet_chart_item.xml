@@ -26,7 +26,7 @@
         android:textSize="20sp"
         android:layout_below="@id/dietType"
         android:paddingRight="10dp"
-        android:textColor="#269bc6"/>
+        android:textColor="#0978a1"/>
     <TextView
         android:id="@+id/dietMenuText"
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
         android:layout_below="@id/dietType"
         android:layout_toRightOf="@id/dietMenu"
         android:textSize="20sp"
-        android:textColor="#00bf79"/>
+        android:textColor="#454f53"/>
 
     <TextView
         android:id="@+id/dietTime"
@@ -45,7 +45,7 @@
         android:layout_below="@id/dietMenu"
         android:paddingRight="10dp"
         android:textSize="20sp"
-        android:textColor="#269bc6"/>
+        android:textColor="#0978a1"/>
     <TextView
         android:id="@+id/dietTimeText"
         android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
         android:layout_toRightOf="@id/dietTime"
         android:paddingRight="20dp"
         android:textSize="20sp"
-        android:textColor="#00bf79"/>
+        android:textColor="#454f53"/>
 
     <TextView
         android:id="@+id/dietDate"
@@ -64,7 +64,7 @@
         android:text="Diet Date:"
         android:layout_below="@id/dietTime"
         android:paddingRight="10dp"
-        android:textColor="#269bc6"
+        android:textColor="#0978a1"
         android:textSize="20sp">
     </TextView>
     <TextView
@@ -74,7 +74,7 @@
         android:text="Diet Date"
         android:layout_below="@id/dietTimeText"
         android:layout_toRightOf="@id/dietDate"
-        android:textColor="#00bf79"
+        android:textColor="#454f53"
         android:textSize="20sp">
     </TextView>
 

@@ -24,11 +24,11 @@
             app:backgroundTint="#214dac"
             android:clickable="true"
             app:layout_anchorGravity="bottom|right|end"
-            android:layout_alignBottom="@+id/dietListView"
-            android:layout_alignRight="@+id/dietListView"
             app:rippleColor="#0a92e1"
             app:elevation="4dp"
-            android:layout_margin="5dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
 </LinearLayout>
